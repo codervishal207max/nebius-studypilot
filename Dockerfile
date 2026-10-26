@@ -4,5 +4,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 RUN chmod +x start.sh
-EXPOSE 8000 8501
+ENV DB_PATH=/srv/data/assistant.db
+EXPOSE 8501
 CMD ["./start.sh"]
